@@ -9,4 +9,4 @@ My dotfiles shared between machines for Bash, Linux, and OSX.
 ## License
 
 These dot files are licensed under the [MIT License](http://en.wikipedia.org/wiki/MIT_License).
-The full license text is available in [LICENSE.txt]().
+The full license text is available in [LICENSE.txt](https://raw.githubusercontent.com/chiayolin/dotfiles/master/LICENSE.txt).
