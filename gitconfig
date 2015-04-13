@@ -1,0 +1,9 @@
+[user]
+	email = chiay.lin@gmail.com
+	name = chiayolin
+[push]
+	default = simple
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
