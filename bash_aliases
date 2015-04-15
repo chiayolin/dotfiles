@@ -1,5 +1,3 @@
-#!/bash/sh
-
 # git aliases
 alias gcl='git clone'
 alias gget='git pull'
