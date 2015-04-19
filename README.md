@@ -2,6 +2,10 @@
 
 My dot files shared between machines for Bash, Linux, and OSX.
 
+## Installing
+
+Run `install-dotfiles` to install dot files.
+
 ## Contact
 
 [Chiayo Lin](mailto:chiayo.lin@gmail.com)
