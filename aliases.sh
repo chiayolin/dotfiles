@@ -1,0 +1,7 @@
+alias rsync="rsync --partial --progress --human-readable --compress"
+alias less="less --ignore-case --raw-control-chars"
+alias mkdir="mkdir -vp"
+alias cp="cp -irv"
+alias rm="rm -iv"
+alias mv="mv -iv"
+alias df="df -H"
