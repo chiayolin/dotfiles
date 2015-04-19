@@ -4,7 +4,7 @@ My dot files shared between machines for Bash, Linux, and OSX.
 
 ## Installing
 
-Run `install-dotfiles` to install dot files.
+Run `install-dotfiles.sh` to install dot files.
 
 ## Contact
 
