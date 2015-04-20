@@ -3,9 +3,13 @@
 My dot files shared between machines for Bash, Linux, and OSX.
 
 ## Installing
-Use `git clone --recursive https://github.com/chiayolin/dotfiles` to clone the project with submodule(s).
 
-Run `install-dotfiles.sh` to install dot files.
+``` bash
+git clone --recursive https://github.com/chiayolin/dotfiles` 
+```
+Pass `--recursive` to `git clone` so you can clone the project with submodule(s). 
+
+Run `install-dotfiles.sh` to install dot files. Or you can copy these to ~/ one by one.
 
 ## Contact
 
