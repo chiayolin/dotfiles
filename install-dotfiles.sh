@@ -1,5 +1,4 @@
 #!/bin/sh
-
 DOTFILESDIR=$(pwd -P)
 
 for DOTFILE in *; do
@@ -18,7 +17,6 @@ for DOTFILE in *; do
 	# get *.sh files, remove it. then add a dot in front.
 	echo $DOTFILE | grep -q '\.sh' \
 		&& HOMEFILE="$HOME/.$(echo $DOTFILE | sed -e 's/\.sh//')"
-	echo $HOMEFILE
 	
 	# make symbolic links to ~/
 	if [ -L "$HOMEFILE" ] && ! [ -d $DOTFILE ]; then
