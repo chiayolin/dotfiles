@@ -1,21 +1,31 @@
+" text editor
 syntax on
 set ruler
 set number
 set hlsearch
+
+" two spaces for tab
 set tabstop=2
 set shiftwidth=2
 set backspace=indent,eol,start  
 
+" load plugins
 execute pathogen#infect()
 filetype plugin indent on
 colorscheme brookstream
 
+" ctrlp
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+" nerdtree
 autocmd VimEnter * NERDTree
 let NERDTreeIgnore=['\~$', '^\.git', '\.swp$', '\.DS_Store$']
 let NERDTreeShowHidden=1
 nmap <LocalLeader>nn :NERDTreeToggle<cr>
 nmap <LocalLeader>nm :NERDTreeToggle<cr>
 
+" tlist
 let Tlist_Use_Right_Window=1
 let Tlist_Auto_Open=0
 let Tlist_Enable_Fold_Column=0
