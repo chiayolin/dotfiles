@@ -1,8 +1,9 @@
-# . Files
+# Dotfiles ~/*.
 
 My dot files shared between machines for Bash, Linux, and OSX.
 
 ## Installing
+Use `git clone --recursive https://github.com/chiayolin/dotfiles` to clone the project with submodule(s).
 
 Run `install-dotfiles.sh` to install dot files.
 
