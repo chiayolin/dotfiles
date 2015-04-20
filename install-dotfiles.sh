@@ -10,7 +10,7 @@ for DOTFILE in *; do
 	# get full path
 	DIRFILE="$DOTFILESDIR/$DOTFILE"
 	
-	# skip non dotfiles
+	# skip non dotfiles and old files with *.old
 	echo $DOTFILE | egrep -q '(dotfiles|\.txt|\.md|\.old)' \
 		&& continue
 	
