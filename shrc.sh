@@ -9,7 +9,7 @@ OS="$(uname -s)"
 [ $OS = "Darwin" ] && export OSX=1 && export UNIX=1 
 [ $OS = "Linux" ] && export LINUX=1 && export UNIX=1
 
-# colourful man
+# colorful man
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'
 export LESS_TERMCAP_me=$'\E[0m'
@@ -25,5 +25,12 @@ source ~/.aliases
 # source ~/.hfile
 
 # platform-specific stuffs
-#
-# TBD
+if [ $LINUX ]; then
+	# colorful ls
+	alias ls='ls --color=auto'
+
+	# ibus input
+	export GTK_IM_MODULE=ibus
+	export XMODIFIERS=@im=ibus
+	export QT_IM_MODULE=ibus
+fi
