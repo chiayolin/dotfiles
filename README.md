@@ -1,4 +1,4 @@
-# Dotfiles ~/*.
+# Dotfiles ~/.*
 
 My dot files shared between machines for Bash, Linux, and OSX.
 
