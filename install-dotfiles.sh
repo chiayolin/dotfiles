@@ -11,7 +11,7 @@ for DOTFILE in *; do
 	DIRFILE="$DOTFILESDIR/$DOTFILE"
 	
 	# skip non dotfiles
-	echo $DOTFILE | egrep -q '(dotfiles|\.txt|\.md)' \
+	echo $DOTFILE | egrep -q '(dotfiles|\.txt|\.md|\.old)' \
 		&& continue
 	
 	# get *.sh files, remove it. then add a dot in front.
