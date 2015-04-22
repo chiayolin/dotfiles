@@ -33,4 +33,6 @@ if [ $LINUX ]; then
 	export GTK_IM_MODULE=ibus
 	export XMODIFIERS=@im=ibus
 	export QT_IM_MODULE=ibus
+elif [ $OSX ]; then
+	export LC_ALL=en_US.UTF-8
 fi
