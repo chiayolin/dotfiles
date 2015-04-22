@@ -1,3 +1,6 @@
+# if not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
 # include shared shell configuraion
 source ~/.shrc
 
