@@ -3,11 +3,12 @@ syntax on
 set ruler
 set number
 set hlsearch
+set backspace=indent,eol,start 
 
 " two spaces for tab
 set tabstop=2
 set shiftwidth=2
-set backspace=indent,eol,start  
+set expandtab
 
 " load plugins
 execute pathogen#infect()
