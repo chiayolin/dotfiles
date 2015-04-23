@@ -8,6 +8,7 @@ export SAVEHIST=100000
 OS="$(uname -s)"
 [ $OS = "Darwin" ] && export OSX=1 && export UNIX=1 
 [ $OS = "Linux" ] && export LINUX=1 && export UNIX=1
+uname -s | grep -q "_NT-" && WINDOWS=1
 
 # colorful man
 export LESS_TERMCAP_mb=$'\E[01;31m'
@@ -35,4 +36,7 @@ if [ $LINUX ]; then
 	export QT_IM_MODULE=ibus
 elif [ $OSX ]; then
 	export LC_ALL=en_US.UTF-8
+elif [ $WINDOWS ]; then
+	# clear command for cygwin
+	alias clear='printf "\033c"'
 fi
