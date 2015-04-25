@@ -36,6 +36,9 @@ if [ $LINUX ]; then
 	export QT_IM_MODULE=ibus
 elif [ $OSX ]; then
 	export LC_ALL=en_US.UTF-8
+  # brew update and upgrade
+  [ "$(which brew)" ] && \
+    alias buu='brew update && brew upgrade'
 elif [ $WINDOWS ]; then
 	# clear command for cygwin
 	alias clear='printf "\033c"'
