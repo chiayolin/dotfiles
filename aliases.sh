@@ -22,7 +22,7 @@ alias gcmm='git commit -m'
 alias gsh='git show'
 ## Git Show HEAD@{N}
 function gshn() {
-	([ -z "$1" ] || [ $(($1)) -lt 0 ]) && echo 'Invalid integer!' && return
-		git show HEAD@{$1}
+  ([ -z "$1" ] || [ $(($1)) -lt 0 ]) && echo 'Invalid integer!' && return
+    git show HEAD@{$1}
 }
 
