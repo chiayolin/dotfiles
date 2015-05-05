@@ -38,7 +38,7 @@ elif [ $OSX ]; then
   export LC_ALL=en_US.UTF-8
   # brew update and upgrade
   [ "$(which brew)" ] && \
-    alias buu='brew update && brew upgrade'
+    alias buu='brew update && brew upgrade --all'
 elif [ $WINDOWS ]; then
   # clear command for cygwin
   alias clear='printf "\033c"'
