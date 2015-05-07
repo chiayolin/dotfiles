@@ -1,4 +1,5 @@
 #!/bin/sh
+LASTPATH=$(pwd -L)
 DOTFILESDIR=$(pwd -P)
 
 for DOTFILE in *; do
@@ -26,3 +27,5 @@ for DOTFILE in *; do
     ln -sv "$DIRFILE" "$HOMEFILE"
   fi
 done
+
+cd $LASTPATH
