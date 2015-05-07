@@ -14,7 +14,7 @@ Run `install-dotfiles.sh` to install dot files. Or copy these to ~/ one by one.
 Here's a quick way to install it, just paste that at a terminal prompt:
 
 ```bash
-git clone --recursive https://github.com/chiayolin/dotfiles ~/dotfiles && sh ~/dotfiles/install-dotfiles.sh && source ~/.bash_profile
+git clone --recursive https://github.com/chiayolin/dotfiles && cd dotfiles && sh install-dotfiles.sh && . ~/.bash_profile
 ```
 
 ## Contact
