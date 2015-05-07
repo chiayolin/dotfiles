@@ -20,6 +20,9 @@ shopt -s cmdhist
 # correct spelling mistakes
 shopt -s cdspell
 
+# vi editing mode
+set -o vi
+
 # sexy prompt
 if [ $USER = "root" ]; then
   PS1='\[\033[01;35m\]\h\[\033[01;34m\] \W #\[\033[00m\] '
@@ -33,3 +36,4 @@ fi
 export HISTCONTROL=ignoredups
 export PROMPT_COMMAND='history -a'
 export HISTIGNORE="&:ls:[bf]g:exit"
+
