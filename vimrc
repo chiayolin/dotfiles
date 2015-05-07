@@ -26,6 +26,11 @@ let NERDTreeShowHidden=1
 nmap <LocalLeader>nn :NERDTreeToggle<cr>
 nmap <LocalLeader>nm :NERDTreeToggle<cr>
 
+" close vim if the only window left open is a NERDTree
+autocmd bufenter * 
+  \ if (winnr("$") == 1 && exists("b:NERDTreeType") 
+    \ && b:NERDTreeType == "primary") | q | endif
+
 " tlist
 let Tlist_Use_Right_Window=1
 let Tlist_Auto_Open=0
