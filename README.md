@@ -23,5 +23,7 @@ git clone --recursive https://github.com/chiayolin/dotfiles && cd dotfiles && sh
 
 ## License
 
+> The code is dedicated, in respect and admiration, to the spirit that lives in the computer.
+
 These dot files are licensed under the [MIT License](http://en.wikipedia.org/wiki/MIT_License).
 The full license text is available in [LICENSE.txt](https://raw.githubusercontent.com/chiayolin/dotfiles/master/LICENSE.txt).
