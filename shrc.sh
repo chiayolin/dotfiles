@@ -34,11 +34,15 @@ if [ $LINUX ]; then
   export GTK_IM_MODULE=ibus
   export XMODIFIERS=@im=ibus
   export QT_IM_MODULE=ibus
+
 elif [ $OSX ]; then
   export LC_ALL=en_US.UTF-8
+  export PATH="/usr/local/sbin:$PATH"
+
   # brew update and upgrade
   [ "$(which brew)" ] && \
     alias buu='brew update && brew upgrade --all'
+
 elif [ $WINDOWS ]; then
   # clear command for cygwin
   alias clear='printf "\033c"'
