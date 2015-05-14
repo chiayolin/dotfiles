@@ -22,9 +22,6 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 # aliases
 source ~/.aliases
 
-# hide or show hidden file in finder
-# source ~/.hfile
-
 # platform-specific stuffs
 if [ $LINUX ]; then
   # colorful ls
