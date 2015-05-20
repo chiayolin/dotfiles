@@ -19,7 +19,7 @@ git clone --recursive https://github.com/chiayolin/dotfiles && cd dotfiles && sh
 
 ## Contact
 
-[![Chiayo Lin](https://img.shields.io/badge/author-chiayolin-green.svg)](mailto:chiayo.lin@gmail.com)
+[![Chiayo Lin](https://img.shields.io/badge/author-Chiayo%20Lin-green.svg)](mailto:chiayo.lin@gmail.com)
 
 ## License
 [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://raw.githubusercontent.com/chiayolin/dotfiles/master/LICENSE.txt)
