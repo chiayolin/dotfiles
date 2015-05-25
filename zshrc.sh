@@ -46,7 +46,7 @@ then
 else
   PROMPT='%{$fg_bold[green]%}%m %{$fg_bold[blue]%}# %b%f'
 fi
-RPROMPT='%{$fg_bold[red]%}$(git_branch)%{$fg_bold[yellow]%}$(svn_branch)%b[%{$fg_bold[blue]%}%~%b%f]'
+RPROMPT='%{$fg_bold[red]%}$(git_branch)%b[%{$fg_bold[blue]%}%~%b%f]'
 
 # history file
 export HISTFILE=~/.zsh_history
