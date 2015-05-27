@@ -60,6 +60,10 @@ export WORDCHARS=''
 # fix delete key on OSX
 [ $OSX ] && bindkey "\e[3~" delete-char
 
+# fuck if thefuck exists
+[ "$(which thefuck)" ] && \
+  alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
+
 # alternate mappings for Ctrl-U/V to search the history
 bindkey "^u" history-beginning-search-backward
 bindkey "^v" history-beginning-search-forward

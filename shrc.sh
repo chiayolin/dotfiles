@@ -39,10 +39,6 @@ elif [ $OSX ]; then
   # brew update and upgrade
   [ "$(which brew)" ] && \
     alias buu='brew update && brew upgrade --all'
-  
-  # fuck if thefuck exist 
-  [ "$(which thefuck)" ] && \
-    alias fuck='eval $(thefuck $(fc -ln -1)); history -r'
 
 elif [ $WINDOWS ]; then
   # clear command for cygwin

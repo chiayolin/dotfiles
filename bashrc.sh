@@ -32,6 +32,10 @@ else
   PS1='\[\033[01;32m\]\h\[\033[01;34m\] \W #\[\033[00m\] '
 fi
 
+# fuck if thefuck exists
+[ "$(which thefuck)" ] && \
+  alias fuck='eval $(thefuck $(fc -ln -1)); history -r'
+
 # history
 export HISTCONTROL=ignoredups
 export PROMPT_COMMAND='history -a'
