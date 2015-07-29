@@ -28,6 +28,7 @@ let g:ctrlp_cmd = 'CtrlP'
 " nerdtree
 autocmd VimEnter * NERDTree
 let NERDTreeIgnore=['\~$', '^\.git', '\.swp$', '\.DS_Store$']
+let g:NERDTreeDirArrows=0
 let NERDTreeShowHidden=1
 nmap <LocalLeader>nn :NERDTreeToggle<cr>
 nmap <LocalLeader>nm :NERDTreeToggle<cr>
