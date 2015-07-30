@@ -38,11 +38,12 @@ if [ $LINUX ]; then
 elif [ $OSX ]; then
   export LC_ALL=en_US.UTF-8
   export PATH="/usr/local/sbin:$PATH"
+  eval "$(thefuck-alias)"
 
   # brew update and upgrade
   [ "$(which brew)" ] && \
     alias buu='brew update && brew upgrade --all'
-
+  
 elif [ $WINDOWS ]; then
   # clear command for cygwin
   alias clear='printf "\033c"'
