@@ -32,9 +32,16 @@ else
   PS1='\[\033[01;32m\]\h\[\033[01;34m\] \W #\[\033[00m\] '
 fi
 
-# fuck if thefuck exists
-[ "$(which thefuck)" ] && \
-  alias fuck='eval $(thefuck $(fc -ln -1)); history -r'
+# sometimes i prefer the classic prompt
+classic_prompt () {
+  local P_0="\e[00;37m┌[\[\e[0m\]\[\e[00;31m\]\u\[\e[0m\]\[\e[00;37m\]"
+  local P_1="@\[\e[0m\]\[\e[00;34m\]\h\[\e[0m\]\[\e[00;37m\]]-[\[\e[0m\]\[\e[00;33m\]"
+  local P_2="\$?\[\e[0m\]\[\e[00;37m\]]: \[\e[0m\]\[\e[00;36m\]\w\[\e[0m\]\[\e[00;37m\]"
+  local P_3="\n└─[\[\e[0m\]\[\e[00;32m\]\@\[\e[0m\]\[\e[00;37m\]]\\$ \[\e[0m\]"
+  
+  export PS1="$P_0$P_1$P_2$P_3"
+}
+
 
 # history
 export HISTCONTROL=ignoredups
