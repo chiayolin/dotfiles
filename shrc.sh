@@ -48,7 +48,7 @@ elif [ $OSX ]; then
     alias buu='brew update && brew upgrade --all'
 
   # figlet thingy
-  figlet "Occupy  Mars"
+  # figlet "Occupy  Mars"
   
 elif [ $WINDOWS ]; then
   # clear command for cygwin
