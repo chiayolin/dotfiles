@@ -38,11 +38,17 @@ if [ $LINUX ]; then
 elif [ $OSX ]; then
   export LC_ALL=en_US.UTF-8
   export PATH="/usr/local/sbin:$PATH"
-  eval "$(thefuck-alias)"
+
+  # check if thefuck exists
+  [ "$(which thefuck)" ] && \
+    eval "$(thefuck --alias)"
 
   # brew update and upgrade
   [ "$(which brew)" ] && \
     alias buu='brew update && brew upgrade --all'
+
+  # figlet thingy
+  figlet "Occupy  Mars"
   
 elif [ $WINDOWS ]; then
   # clear command for cygwin
