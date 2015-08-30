@@ -1,6 +1,6 @@
 # Dotfiles ~/.*
 
-My dot files shared between machines for Bash, Linux, and OSX.
+My dot files shared between machines for Bash and Zsh on Linux and OSX.
 
 ## Installing
 
