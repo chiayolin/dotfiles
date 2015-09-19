@@ -46,10 +46,20 @@ elif [ $OSX ]; then
   # brew update and upgrade
   [ "$(which brew)" ] && \
     alias buu='brew update && brew upgrade --all'
+  
+  #  mit-scheme silent shortcut: scm
+  if [ "$(which scheme)" ]; then
+    scm() {
+      [ $# -eq 0 ] && \
+        >&2 echo "scm: error: no input files" \
+          && return 1
+      scheme --silent < "$*"
+    }
+  fi
 
   # figlet thingy
   # figlet "Occupy  Mars"
-  
+
 elif [ $WINDOWS ]; then
   # clear command for cygwin
   alias clear='printf "\033c"'
