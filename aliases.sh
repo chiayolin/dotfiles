@@ -25,4 +25,3 @@ function gshn() {
   ([ -z "$1" ] || [ $(($1)) -lt 0 ]) && echo 'Invalid integer!' && return
     git show HEAD@{$1}
 }
-
