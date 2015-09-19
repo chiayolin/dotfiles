@@ -26,7 +26,7 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
 " nerdtree
-autocmd VimEnter * NERDTree
+" autocmd VimEnter * NERDTree
 let NERDTreeIgnore=['\~$', '^\.git', '\.swp$', '\.DS_Store$']
 let g:NERDTreeDirArrows=0
 let NERDTreeShowHidden=1
