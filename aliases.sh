@@ -7,6 +7,9 @@ alias rm="rm -iv"
 alias mv="mv -iv"
 alias df="df -H"
 
+# bc
+alias bc="bc -lq"
+
 # git
 ## Git CLone
 alias gcl='git clone'
