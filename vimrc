@@ -12,7 +12,7 @@ set expandtab
 
 " except C and Python 
 autocmd FileType python 
-  \ setlocal noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
+  \ setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4
 autocmd FileType c
   \ setlocal noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
 
