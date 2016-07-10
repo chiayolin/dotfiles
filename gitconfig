@@ -1,6 +1,7 @@
 [user]
 	email = chiayo.lin@gmail.com
 	name = chiayolin
+	signingkey = 0A1C61AD
 [push]
 	default = simple
 [github]
