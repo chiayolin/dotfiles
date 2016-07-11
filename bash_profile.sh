@@ -1,2 +1,0 @@
-source ~/.shprofile
-source ~/.bashrc
