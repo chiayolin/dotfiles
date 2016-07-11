@@ -29,7 +29,7 @@ install_dotfiles () {
       ln -sv "$dotfile_origin" "$dotfile_target"
     fi
   done
-  cd ..
+  cd $ORIGIN_DIR
 }
 
 uninstall_dotfiles () {
@@ -46,8 +46,12 @@ fetch_update () {
         git submodule update
 }
 
+_write_stdout () {
+  echo "$PROGM_NAME: $1"
+}
+
 _write_stderr () {
-  2>&1 echo "$PROGM_NAME: error: $1"
+  (2>&1 echo "$PROGM_NAME: error: $1")
 }
 
 error_handling () {
@@ -60,31 +64,51 @@ error_handling () {
       ;;
     5) _write_stderr "$prefix update $suffix"
       ;;
-    *) _write_stderr "unknown error(s) :(" 
+    6) _write_stderr "$prefix determine repo's remote source"
+      ;;
+    7) _write_stderr "invalid option: $ARG"
+       echo && print_help
+      ;;
+    *) _write_stderr "unknown error(s) :("
+      ;;
   esac
 
   exit 1
 }
 
+print_help () {
+  echo "usage: $PROGM_NAME [option]"
+  echo "options:"
+  echo "  show       show repo's remote source"
+  echo "  update     fetch the latest update(s)"
+  echo "  install    installl dotfiles to \$HOME"
+  echo "  uninstall  uninstall dotfiles from \$HOME"
+}
+
 main () {
-  if [ $1 == "install" ]; then
-    echo "installing dotfiles..."
+  if [ -z $1 ]; then
+    print_help && exit 0
+  elif [ $1 == "install" ]; then
+    _write_stdout "installing dotfiles..."
     install_dotfiles || return 3
   
   elif [ $1 == "uninstall" ]; then
-    echo "uninstalling dotfiles..."
+    _write_stdout "uninstalling dotfiles..."
     uninstall_dotfiles || return 4
   
   elif [ $1 == "update" ]; then
-    echo "fetching updates..."
+    _write_stdout "fetching updates..."
     fetch_update || return 5
+
+  elif [ $1 == "show" ]; then
+    _write_stdout "determining repo's remote origin..."
+    git remote show origin || return 6
   
   else
-    echo "unknown option" || return 6
+    return 7
   fi
 }
 
 # get the last argument and pass it to main
-for argv; do : ; done
-main ${argv} || error_handling $?
-echo "done."
+for ARGV; do : ; done && ARG=${ARGV}
+main $ARG || error_handling $?
