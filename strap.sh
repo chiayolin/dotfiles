@@ -1,9 +1,7 @@
 #/bin/sh
-
 DOTFLE_DIR="formulae"
 ORIGIN_DIR=$(pwd -P)
 PROGM_NAME=$(basename "$0")
-
 
 install_dotfiles () {
   cd ./$DOTFLE_DIR
