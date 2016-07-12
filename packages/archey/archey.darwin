@@ -3,7 +3,7 @@
 #
 # PURPOSE
 #   this is an operating-system specific installation script
-#   which is executed after PKG_NAME.info. the script nstalls 
+#   that is executed after PKG_NAME.info. the script installs 
 #   the package on a specific OS by following the rules defined 
 #   below.
 
