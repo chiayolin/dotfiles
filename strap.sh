@@ -65,6 +65,8 @@ _write_stderr () {
   (2>&1 echo "$PROGM_NAME: error: $1")
 }
 
+# _prompt_option - a general confirmation function. 
+#                  example: _prompt_option || exit $SUCCESS
 _prompt_option () {
   printf "$PROGM_NAME: do you want do continue (y/n)? "
 
@@ -132,7 +134,14 @@ install_packages () {
 
 # uninstall_packages - uninstall the packages installed
 uninstall_packages () {
-  _write_stdout "please uninstall the installed packages manually."
+   _write_stdout "the following packages will be uninstalled:"
+   for package in $SUPPORTED_PKGS; do echo "  $package"; done
+   _prompt_option || exit $SUCCESS
+
+   for package in $SUPPORTED_PKGS; do
+     _write_stdout "uninstalling $ORIGIN_DIR/$package..."
+     source $package uninstall
+   done
 }
 
 # fetch_update - fetch updates from remote source
@@ -159,8 +168,10 @@ _error_handling () {
     $RSRCERR) _write_stderr "$prefix determine repo's remote source"
       ;;
     $IPKGERR) _write_stderr "$prefix install $suffix_pkg"
+              _write_stderr "please uninstall the packages manually."
       ;;
     $UPKGERR) _write_stderr "$prefix uninstall $suffix_pkg"
+              _write_stderr "please uninstall the installed packages manually."
       ;;
     $IOPTERR) _write_stderr "invalid option: $ARG"
        echo && print_help
