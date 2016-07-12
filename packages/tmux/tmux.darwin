@@ -1,0 +1,33 @@
+#!/bin/bash
+# tmux.darwin - this file is part of strap.sh
+#
+# PURPOSE
+#   this is an operating-system specific installation script
+#   that is executed after PKG_NAME.info. the script installs 
+#   the package on a specific OS by following the rules defined 
+#   below.
+
+## package name
+PKG_NAME="tmux"
+## package manager
+PKG_MNGR="brew"
+## package manager option for installing
+PKG_INST="install"
+## package manager option for uninstalling
+PKG_UIST="uninstall --force"
+
+# check if the required package manager exists on the system
+command -v $PKG_MNGR >/dev/null 2>&1 || { 
+  _write_stderr \
+    "\`$PKG_MNGR\` does not exist on the system, aborting..." 
+  exit 1 
+}
+
+for _install_option; do : ; done # get the last argument
+if [ "${_install_option}" == "install" ]; then 
+  ## rule(s) for installing package
+  $PKG_MNGR $PKG_INST $PKG_NAME
+else
+  ## rule(s) for uninstalling package
+  $PKG_MNGR $PKG_UIST $PKG_NAME
+fi
