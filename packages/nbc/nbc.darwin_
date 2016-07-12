@@ -12,7 +12,7 @@ PKG_NAME="nbc"
 ## package manager
 PKG_MNGR="brew"
 ## package manager option for installing
-PKG_INST="install"
+PKG_INST="install chiayolin/cask"
 ## package manager option for uninstalling
 PKG_UIST="uninstall --force"
 
@@ -26,10 +26,8 @@ command -v $PKG_MNGR >/dev/null 2>&1 || {
 for _install_option; do : ; done # get the last argument
 if [ "${_install_option}" == "install" ]; then 
   ## rule(s) for installing package
-  $PKG_MNGR tap chiayolin/cask
-  $PKG_MNGR $PKG_INST $PKG_NAME
+  $PKG_MNGR $PKG_INST/$PKG_NAME
 else
   ## rule(s) for uninstalling package
   $PKG_MNGR $PKG_UIST $PKG_NAME
-  $PKG_MNGR untap chiayolin/cask
 fi
