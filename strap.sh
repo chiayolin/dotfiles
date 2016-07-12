@@ -168,10 +168,10 @@ _error_handling () {
     $RSRCERR) _write_stderr "$prefix determine repo's remote source"
       ;;
     $IPKGERR) _write_stderr "$prefix install $suffix_pkg"
-              _write_stderr "please uninstall the packages manually."
+              _write_stderr "please install the packages manually."
       ;;
     $UPKGERR) _write_stderr "$prefix uninstall $suffix_pkg"
-              _write_stderr "please uninstall the installed packages manually."
+              _write_stderr "please uninstall the packages manually."
       ;;
     $IOPTERR) _write_stderr "invalid option: $ARG"
        echo && print_help
