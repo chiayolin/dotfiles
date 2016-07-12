@@ -3,13 +3,9 @@
 #
 # PURPOSE
 #   this is an operating-system specific installation script
-#   and it will be executed after PKG_NAME.info. the script
-#   installs the package on a specific OS by following the
-#   rules defined below.
-# INFO
-#   head to PKG_NAME.info for info about the package and
-#   return values. the parts with comments "##" should be
-#   edit to suit your own needs.
+#   which is executed after PKG_NAME.info. the script nstalls 
+#   the package on a specific OS by following the rules defined 
+#   below.
 
 ## package name
 PKG_NAME="archey"
