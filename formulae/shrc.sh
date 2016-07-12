@@ -22,9 +22,6 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 # aliases
 source ~/.aliases
 
-# save current path dynamically
-trap 'pwd > ~/.lastpwd' DEBUG
-
 # platform-specific stuffs
 if [ $LINUX ]; then
   # colorful ls
@@ -64,3 +61,6 @@ elif [ $WINDOWS ]; then
   # clear command for cygwin
   alias clear='printf "\033c"'
 fi
+
+# save current path dynamically
+# trap 'pwd > ~/.lastpwd' DEBUG
