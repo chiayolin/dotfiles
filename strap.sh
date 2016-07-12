@@ -70,7 +70,7 @@ fetch_update () {
         git submodule update
 }
 
-error_handling () {
+_error_handling () {
   local prefix="failed to"
   local suffix="dotfiles"
   case $1 in
@@ -135,4 +135,4 @@ main () {
 
 # get the last argument and pass it to main
 for ARGV; do : ; done && ARG=${ARGV}
-main $ARG || error_handling $?
+main $ARG || _error_handling $?
