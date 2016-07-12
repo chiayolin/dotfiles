@@ -1,0 +1,18 @@
+#!/bin/bash
+# hfile.info - this file is part of strap.sh
+#
+# PURPOSE
+#   PACKAGE_NAME.info is called before any operating-system 
+#   specific installation scripts are executed. some examples 
+#   of OS specific installation scripts are `archey.darwin`
+#   and `archey.debian`.
+#
+# RETURN VALUES
+#   0 - success
+#   1 - failure
+#
+# PACKAGE INFO
+#   hfile - a shell script to show or hide hidden files in 
+#           Finder on OS X.
+
+return 0
