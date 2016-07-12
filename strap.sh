@@ -134,7 +134,8 @@ install_packages () {
 
 # uninstall_packages - uninstall the packages installed
 uninstall_packages () {
-   _write_stdout "the following packages will be uninstalled:"
+   _write_stdout \
+      "the following packages and their dependencies will be UNINSTALLED:"
    for package in $SUPPORTED_PKGS; do echo "  $package"; done
    _prompt_option || exit $SUCCESS
 
