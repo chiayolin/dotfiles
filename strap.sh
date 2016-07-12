@@ -1,16 +1,65 @@
 #/bin/sh
+#
+# NAME
+#   strap.sh - bootstrap your development env.
+#
+# PURPOSE
+#   this is the main script of my dotfiles repository for installing 
+#   the dotfiles and packages that are usually installed on my mach-
+#   ine. see README.md under this directory for more information ab-
+#   out the directory structure.
+#
+# USAGE
+#   sh strap.sh [options]
+#   options:  
+#     show           show repo's remote source
+#     update         fetch the latest update(s)
+#     install        installl dotfiles to \$HOME
+#     uninstall      uninstall dotfiles from \$HOME
+#     install-pkg    install packages to the mchine
+#     uninstall-pkg  uninstall packages from the machine
+#
+#    example:
+#       $ sh strap.sh install
+#
+#     run `sh strap.sh` without any additional aruguments to ptint 
+#     out the help message
+#
+# AUTHOR
+#   Chiayo Lin <chiayo.lin@gmail.com>
+#   <https://github.com/chiayolin/dotfiles>
+#
+# LICENSE
+#   this file is licensed under the MIT License.
+
+# init
 PACKGE_DIR="packages"
 DOTFLE_DIR="formulae"
 ORIGIN_DIR=$(pwd -P)
 PROGM_NAME=$(basename "$0")
 
+# get operating system type
 [ "$(uname -s)" == "Darwin" ] && OPSYS_NAME="darwin"
 SUPPORTED_PKGS=$(find $PACKGE_DIR -type f -name "*.$OPSYS_NAME")
 
+# define errnos
+# INSTERR - installation error
+# UISTERR - uninstallation error
+# UPDTERR - update error
+# RSRCERR - git remote show origin error
+# IPKGRRR - package installation error
+# UPKGERR - package uninstallation error
+# UKNOERR - unknown error(s)
+INSTERR=3; UISTERR=4; UPDTERR=5; 
+RSRCERR=6; IPKGRRR=7; UPKGERR=8;
+UKNOERR=9; SUCCESS=0;
+
+# general function writting to stdout
 _write_stdout () {
   echo "$PROGM_NAME: $1"
 }
 
+# general function writting to stderr
 _write_stderr () {
   (2>&1 echo "$PROGM_NAME: error: $1")
 }
@@ -85,6 +134,7 @@ _error_handling () {
     7) _write_stderr "invalid option: $ARG"
        echo && print_help
       ;;
+    # put the installing error thingy here too
     *) _write_stderr "unknown error(s) :("
       ;;
   esac
@@ -105,7 +155,7 @@ print_help () {
 
 main () {
   if [ -z $1 ]; then
-    print_help && exit 0
+    print_help && exit $SUCCESS
   elif [ $1 == "install" ]; then
     _write_stdout "installing dotfiles..."
     install_dotfiles || return 3
