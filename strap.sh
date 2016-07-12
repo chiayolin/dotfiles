@@ -1,7 +1,19 @@
 #/bin/sh
+PACKGE_DIR="packages"
 DOTFLE_DIR="formulae"
 ORIGIN_DIR=$(pwd -P)
 PROGM_NAME=$(basename "$0")
+
+[ "$(uname -s)" == "Darwin" ] && OPSYS_NAME="darwin"
+SUPPORTED_PKGS=$(find $PACKGE_DIR -type f -name "*.$OPSYS_NAME")
+
+_write_stdout () {
+  echo "$PROGM_NAME: $1"
+}
+
+_write_stderr () {
+  (2>&1 echo "$PROGM_NAME: error: $1")
+}
 
 install_dotfiles () {
   cd ./$DOTFLE_DIR
@@ -38,20 +50,24 @@ uninstall_dotfiles () {
     grep "$ORIGIN_DIR" | awk '{ print $11 }' | xargs)
 }
 
+install_packages () {
+  for package in $SUPPORTED_PKGS; do
+    _write_stdout "installing $ORIGIN_DIR/$package..."   
+    source $(echo $package | sed -e "s/\.$OPSYS_NAME//").info && \
+      source $package install
+  done
+}
+
+uninstall_packages () {
+  _write_stdout "please uninstall the installed packages manually."
+}
+
 fetch_update () {
   # fetch the latest update
   [ -d "$ORIGIN_DIR/.git" ] && \
     git --work-tree="$ORIGIN_DIR" --git-dir="${ORIGIN_DIR}/.git" pull \
       --recurse-submodules=yes origin master && git submodule init && \
         git submodule update
-}
-
-_write_stdout () {
-  echo "$PROGM_NAME: $1"
-}
-
-_write_stderr () {
-  (2>&1 echo "$PROGM_NAME: error: $1")
 }
 
 error_handling () {
@@ -79,10 +95,12 @@ error_handling () {
 print_help () {
   echo "usage: $PROGM_NAME [option]"
   echo "options:"
-  echo "  show       show repo's remote source"
-  echo "  update     fetch the latest update(s)"
-  echo "  install    installl dotfiles to \$HOME"
-  echo "  uninstall  uninstall dotfiles from \$HOME"
+  echo "  show           show repo's remote source"
+  echo "  update         fetch the latest update(s)"
+  echo "  install        installl dotfiles to \$HOME"
+  echo "  uninstall      uninstall dotfiles from \$HOME"
+  echo "  install-pkg    install packages to the mchine"
+  echo "  uninstall-pkg  uninstall packages from the machine"
 }
 
 main () {
@@ -104,8 +122,14 @@ main () {
     _write_stdout "determining repo's remote origin..."
     git remote show origin || return 6
   
+  elif [ $1 == "install-pkg" ]; then
+    install_packages || return 7
+  
+  elif [ $1 == "uninstall-pkg" ]; then
+    uninstall_packages || return 8
+  
   else
-    return 7
+    return 9
   fi
 }
 
