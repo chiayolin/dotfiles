@@ -31,5 +31,5 @@ if [ "${_install_option}" == "install" ]; then
   $PKG_INST $PKG_NAME
 else
   ## uninstalling package
-  brew uninstall archey
+  $PKG_UIST $PKG_NAME
 fi
