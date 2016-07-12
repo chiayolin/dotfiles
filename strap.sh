@@ -200,6 +200,7 @@ print_help () {
 main () {
   if [ -z $1 ]; then
     print_help && exit $SUCCESS
+  
   elif [ $1 == "install" ]; then
     _write_stdout "installing dotfiles..."
     install_dotfiles || return $INSTERR
