@@ -17,7 +17,8 @@ autocmd FileType c
   \ setlocal noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
 
 " load plugins and runtime files
-execute pathogen#infect()
+call pathogen#infect()
+call pathogen#helptags()
 filetype plugin indent on
 
 " ctrlp
@@ -44,4 +45,4 @@ let Tlist_Compact_Format=0
 let Tlist_WinWidth=28
 let Tlist_Exit_OnlyWindow=1
 let Tlist_File_Fold_Auto_Close = 1
-nmap <LocalLeader>tt :Tlist<cr>
+map <C-t> :TlistToggle<CR>
