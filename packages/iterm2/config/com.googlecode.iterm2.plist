@@ -65,9 +65,9 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>269 400 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>22 24 1396 832 0 0 1440 877 </string>
+	<string>21 24 689 832 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>21 448 689 412 0 0 1440 877 </string>
+	<string>21 24 689 832 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>23 448 332 412 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
@@ -706,9 +706,9 @@
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
-			<true/>
-			<key>Use Bright Bold</key>
 			<false/>
+			<key>Use Bright Bold</key>
+			<true/>
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Use Non-ASCII Font</key>
@@ -726,7 +726,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>73EAADC5-DDBC-496D-AAB0-A2782934A602</string>
 	<key>NoSyncLastTipTime</key>
-	<real>490028655.172602</real>
+	<real>490115153.818955</real>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
@@ -734,6 +734,7 @@
 	<key>NoSyncTipsToNotShow</key>
 	<array>
 		<string>000</string>
+		<string>0000</string>
 	</array>
 	<key>OpenArrangementAtStartup</key>
 	<false/>
@@ -785,7 +786,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-07-12T15:04:03Z</date>
+	<date>2016-07-13T15:04:04Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -803,7 +804,7 @@
 	<key>iTerm Version</key>
 	<string>3.0.4</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
-	<integer>0</integer>
+	<integer>6</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
 	<false/>
 </dict>
