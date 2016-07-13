@@ -41,27 +41,28 @@
 bind r source-file ~/.tmux.conf
 
 # rename the terminals
-set -g set-titles on
-set -g set-titles-string '#(whoami)::#h::#(curl ipecho.net/plain;echo)'
 
-# status bar customization
- set -g status-utf8 on
- set -g status-bg black
- set -g status-fg white
- set -g status-interval 5
- set -g status-left-length 90
- set -g status-right-length 60
- set -g status-left "#[fg=Green]#(whoami)#[fg=white]::#[fg=blue] \
-  (hostname - s)#[fg=white]::##[fg=yellow]#(curl ipecho.net/plain;echo)"
- set -g status-justify left
- set -g status-right '#[fg=Cyan]#S #[fg=white]%a %d %b %R'
+# status bar
+set-window-option -g status-left ""
+set-window-option -g status-left-fg black
+set-window-option -g status-left-bg white
 
- # remap window navigation to mimic vim
- unbind-key j
- bind-key j select-pane -D
- unbind-key k
- bind-key k select-pane -U
- unbind-key h
- bind-key h select-pane -L
- unbind-key l
- bind-key l select-pane -R
+set-window-option -g status-right "#h[#S] %b-%d %l:%M %p"
+set-window-option -g status-right-fg black
+set-window-option -g status-right-bg white
+
+set-window-option -g window-status-format "#I:#W"
+
+set-window-option -g window-status-current-format "[#I:#W]"
+set-window-option -g window-status-current-fg green
+set-window-option -g window-status-current-bg black
+
+# remap window navigation to mimic vim
+unbind-key j
+bind-key j select-pane -D
+unbind-key k
+bind-key k select-pane -U
+unbind-key h
+bind-key h select-pane -L
+unbind-key l
+bind-key l select-pane -R
