@@ -41,13 +41,13 @@ git_branch () {
 
 # nice and colourful prompts
 if [ $USER = "root" ]; then
-  PROMPT='%{$fg_bold[magenta]%}%m %{$fg_bold[blue]%}# %b%f'
+  PROMPT='%{$fg[magenta]%}%m %{$fg[blue]%}# %b%f'
 elif [ -n "${SSH_CONNECTION}" ]; then
-  PROMPT='%{$fg_bold[cyan]%}%m %{$fg_bold[blue]%}# %b%f'
+  PROMPT='%{$fg[cyan]%}%m %{$fg[blue]%}# %b%f'
 else
-  PROMPT='%{$fg_bold[green]%}%m %{$fg_bold[blue]%}# %b%f'
+  PROMPT='%{$fg[green]%}%m %{$fg[blue]%}# %b%f'
 fi
-RPROMPT='%{$fg_bold[red]%}$(git_branch)%b[%{$fg_bold[blue]%}%~%b%f]' 
+RPROMPT='%{$fg[red]%}$(git_branch)%b[%{$fg[blue]%}%~%b%f]' 
 
 # history file
 export HISTFILE=~/.zsh_history
@@ -67,7 +67,7 @@ bindkey "^v" history-beginning-search-forward
 
 # fish-like autosuggestions for zsh
 source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=0"
 
 # fish-like syntax highlighting for zsh
 source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
