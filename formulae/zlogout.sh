@@ -1,1 +1,1 @@
-source ~/.logout
+source $HOME/._include/__shlogout.sh

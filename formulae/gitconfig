@@ -1,16 +1,16 @@
 [user]
-	email = chiayo.lin@gmail.com
-	name = chiayolin
-	signingkey = 0A1C61AD
+  email = chiayo.lin@gmail.com
+  name = chiayolin
+  signingkey = 0A1C61AD
 [push]
-	default = simple
+  default = simple
 [github]
-	username = chiayolin
+  username = chiayolin
 [filter "media"]
-	required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
+  required = true
+  clean = git media clean %f
+  smudge = git media smudge %f
 [filter "lfs"]
-	clean = git lfs clean %f
-	smudge = git lfs smudge %f
-	required = true
+  clean = git lfs clean %f
+  smudge = git lfs smudge %f
+  required = true

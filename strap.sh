@@ -103,8 +103,10 @@ install_dotfiles () {
     # install a dotfile by symlinking it
     if [ -L "$dotfile_target" ] && ! [ -d $dotfile ]; then
       ln -sfv "$dotfile_origin" "$dotfile_target"
+    elif [ -e "$dotfile_target" ]; then
+      rm -rv "$dotfile_target"
+      ln -sv "$dotfile_origin" "$dotfile_target"
     else
-      [ -e "$dotfile_target" ] && rm -rv "$dotfile_target"
       ln -sv "$dotfile_origin" "$dotfile_target"
     fi
   done
