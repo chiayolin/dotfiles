@@ -48,7 +48,7 @@ set-window-option -g status-left ""
 set-window-option -g status-left-fg black
 set-window-option -g status-left-bg white
 
-set-window-option -g status-right "#h[#S] %b-%d %l:%M %p"
+set-window-option -g status-right "#(whoami)[#S] %b-%d %l:%M %p"
 set-window-option -g status-right-fg black
 set-window-option -g status-right-bg white
 
