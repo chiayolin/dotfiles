@@ -24,21 +24,14 @@ source $HOME/._include/__aliases.sh
 ## platform-specific configuration
 # if the machine is running on Linux
 if [ $LINUX ]; then
-  # colourful ls
-  alias ls='ls --color=auto'
+  # do something...
 
 # if the machine is running on OSX
 elif [ $DARWIN ]; then
   export LC_ALL=en_US.UTF-8
   export PATH="/usr/local/sbin:$PATH"
 
-  # configuration for `thefuck` if it's installed
-  command -v thefuck >/dev/null 2>&1 && {
-    eval "$(thefuck --alias)"
-  }
-
 # if the machine is running on Windows
 elif [ $WINDOWS ]; then
-  # the `clear` command for cygwin
-  alias clear='printf "\033c"'
+  # do something
 fi
