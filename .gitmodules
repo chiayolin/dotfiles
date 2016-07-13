@@ -10,3 +10,6 @@
 [submodule "formulae/vim/bundle/ctrlp.vim"]
 	path = formulae/vim/bundle/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim
+[submodule "formulae/vim/bundle/vim-colors-solarized"]
+	path = formulae/vim/bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized
