@@ -1,0 +1,17 @@
+"" text editor stuff
+syntax on
+set ruler
+set number
+set hlsearch
+set backspace=indent,eol,star
+
+" two spaces for tab
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+" except C and Python 
+autocmd FileType python 
+  \ setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4
+autocmd FileType c
+  \ setlocal noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
