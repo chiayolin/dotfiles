@@ -1,9 +1,6 @@
 [submodule "formulae/vim/bundle/nerdtree"]
 	path = formulae/vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree
-[submodule "formulae/vim/bundle/ctrlp.vim"]
-	path = formulae/vim/bundle/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim
 [submodule "formulae/vim/bundle/vim-expand-region"]
 	path = formulae/vim/bundle/vim-expand-region
 	url = https://github.com/terryma/vim-expand-region.git
