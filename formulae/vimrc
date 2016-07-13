@@ -6,7 +6,6 @@ set hlsearch
 set backspace=indent,eol,star
 filetype plugin indent on
 
-
 " two spaces for tab
 set tabstop=2
 set shiftwidth=2
