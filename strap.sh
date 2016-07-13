@@ -104,7 +104,7 @@ install_dotfiles () {
     if [ -L "$dotfile_target" ] && ! [ -d $dotfile ]; then
       ln -sfv "$dotfile_origin" "$dotfile_target"
     else
-      [ -e "$dotfile_target" ] && rm -rv "$dotfile_target"
+      rm -rv "$dotfile_target"
       ln -sv "$dotfile_origin" "$dotfile_target"
     fi
   done
