@@ -13,3 +13,6 @@
 [submodule "formulae/vim/bundle/vim-colors-solarized"]
 	path = formulae/vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized
+[submodule "formulae/zsh/zsh-autosuggestions"]
+	path = formulae/zsh/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions

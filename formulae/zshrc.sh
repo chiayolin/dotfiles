@@ -64,3 +64,6 @@ export WORDCHARS=''
 # alternate mappings for ctrl-u/v to search the history
 bindkey "^u" history-beginning-search-backward
 bindkey "^v" history-beginning-search-forward
+
+# fish-like autosuggestions for zsh
+source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
