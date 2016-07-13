@@ -21,6 +21,12 @@ call pathogen#infect()
 call pathogen#helptags()
 filetype plugin indent on
 
+" colorscheme
+set background=dark
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
+colorscheme solarized
+
 " ctrlp
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -33,9 +39,8 @@ let NERDTreeShowHidden=1
 map <C-n> :NERDTreeToggle<CR>
 
 " close vim if the only window left open is a NERDTree
-autocmd bufenter * 
-  \ if (winnr("$") == 1 && exists("b:NERDTreeType") 
-    \ && b:NERDTreeType == "primary") | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") 
+  \ && b:NERDTree.isTabTree()) | q | endif
 
 " tlist
 let Tlist_Use_Right_Window=1
