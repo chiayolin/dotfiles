@@ -2,7 +2,7 @@
 source $HOME/._include/__shrc.sh
 
 # enable completions
-autoload -U compinit && compinit
+autoload -U compinit && compinit -u
 
 # enable regex moving
 autoload -U zmv
