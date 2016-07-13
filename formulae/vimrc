@@ -1,4 +1,7 @@
-"" text editor stuff
+" load plugins and runtime files
+execute pathogen#infect()
+
+" text editor stuff
 syntax on
 set ruler
 set number
