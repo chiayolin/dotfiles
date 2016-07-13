@@ -27,9 +27,9 @@
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/dot-dev/packages/iterm2/config</string>
+	<string>~/Dotfiles/packages/iterm2/config</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
-	<string>{704, 412}</string>
+	<string>{1400, 840}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -65,7 +65,7 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>269 400 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>21 24 689 832 0 0 1440 877 </string>
+	<string>22 24 1396 832 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>21 448 689 412 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -775,7 +775,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/chiayo/dot-dev/packages/iterm2/config</string>
+	<string>/Users/chiayo/Dotfiles/packages/iterm2/config</string>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
