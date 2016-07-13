@@ -44,9 +44,3 @@ classic_prompt () {
 export HISTCONTROL=ignoredups
 export PROMPT_COMMAND='history -a'
 export HISTIGNORE="&:ls:[bf]g:exit"
-
-# bash completion for brew on OSX
-if [ $OS = "Darwin" ] && \
-  [ -f $(brew --prefix)/etc/bash_completion ]; then
-    $(brew --prefix)/etc/bash_completion
-fi
