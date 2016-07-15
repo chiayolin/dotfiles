@@ -40,7 +40,7 @@
 # a 'ctl-b' for reloading tmux config on the fly 
 bind r source-file ~/.tmux.conf
 
-# rename your terminals
+# turn off terminal title
 set -g set-titles off
 
 # status bar
