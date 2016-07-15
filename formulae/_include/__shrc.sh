@@ -1,4 +1,8 @@
 ## general shell configuration
+
+# geting 256 colours to work in terminal
+export TERM=screen-256color
+
 # save more history
 export HISTSIZE=100000
 export SAVEHIST=100000
@@ -30,8 +34,25 @@ if [ $LINUX ]; then
 elif [ $DARWIN ]; then
   export LC_ALL=en_US.UTF-8
   export PATH="/usr/local/sbin:$PATH"
+  # for coreutils
+  export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+  export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # if the machine is running on Windows
 elif [ $WINDOWS ]; then
   # do something
+fi
+
+# start up tmux if it's installed and not running
+if command -v tmux>/dev/null; then
+  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && \
+    source $HOME/._include/_bin/__tmux.sh
+fi
+
+# path to last pwd file
+export LASTPWD=$HOME/.lastpwd
+
+# load last pwd if file exists
+if [[ -f $LASTPWD ]]; then
+  cd "$(cat $LASTPWD)"
 fi
