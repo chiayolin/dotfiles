@@ -73,7 +73,7 @@ _prompt_option () {
   local old_stty_config=$(stty -g)
   stty raw -echo
   local _option=$(head -c 1)
-  stty $old_stty_config # restore old stty config
+  stty $old_stty_config 2>&1 | logger # restore old stty config
   echo ""
   
   $(echo "$_option" | grep -iq "^y") && return 0
