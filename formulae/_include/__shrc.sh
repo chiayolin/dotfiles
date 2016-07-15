@@ -29,6 +29,7 @@ source $HOME/._include/__aliases.sh
 # if the machine is running on Linux
 if [ $LINUX ]; then
   # do something...
+  ;
 
 # if the machine is running on OSX
 elif [ $DARWIN ]; then
@@ -40,13 +41,8 @@ elif [ $DARWIN ]; then
 
 # if the machine is running on Windows
 elif [ $WINDOWS ]; then
-  # do something
-fi
-
-# start up tmux if it's installed and not running
-if command -v tmux>/dev/null; then
-  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && \
-    source $HOME/._include/_bin/__tmux.sh
+  # do somethinga
+  ;
 fi
 
 # path to last pwd file
@@ -55,4 +51,13 @@ export LASTPWD=$HOME/.lastpwd
 # load last pwd if file exists
 if [[ -f $LASTPWD ]]; then
   cd "$(cat $LASTPWD)"
+fi
+
+# run tmux script if tmux is installed and $ENTER_DEFALUT_SHELL 
+# is not set to 1 by the tmux script
+if command -v tmux>/dev/null; then
+  [ $ENTER_DEFAULT_SHELL ] && \
+    $HOME/._include/_bin/__tmux.sh
+  # prevent the script from running recursively
+  export ENTER_DEFAULT_SHELL=1
 fi
