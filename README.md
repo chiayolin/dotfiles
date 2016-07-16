@@ -33,16 +33,16 @@ To install the dotfiles, run `sh strap.sh install`:
 $ sh strap.sh install
 ```
 
-Execute `strap.sh` with no argument to print the usage:
-
-```sh
-$ sh strap.sh
-```
-
 Alternatively, update and install the dotfiles in one step:
 
 ```sh
 $ sh strap.sh update && sh strap.sh install
+```
+
+Execute `strap.sh` with no argument for help and usage:
+
+```sh
+$ sh strap.sh
 ```
 
 ## Author
