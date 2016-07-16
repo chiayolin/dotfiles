@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640">
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Dotfiles 2.0 by chiayolin</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/chiayolin/dotfiles">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Dotfiles 2.0</h1>
+            <h2>Chiayo&#39;s ~/.*</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/chiayolin/dotfiles/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/chiayolin/dotfiles/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h1>
+<a id="chiayos-" class="anchor" href="#chiayos-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Chiayo's ~/.*</h1>
+
+<p><img src="http://i.imgur.com/RsWMhK0.png?1" alt="a screenshot of my shell"></p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<p><strong>Warning:</strong> If you somehow want to give these dotfiles a try, please review
+the code and edit or remove things that you don't want or need (e.g. <code>gitconfig</code>),
+pronto! By running <code>strap.sh install</code>, some of the existing dotfiles on your 
+machine may be removed and replaced with the symlinks to the dotfiles provided by 
+this repository. <em>Use and install these dotfiles at your own risk</em>.</p>
+
+<p>Clone the repository to wherever you want. The below example keeps the repositry
+in <code>$HOME/Dotfiles/</code> (the uppercase 'D' in 'Dotfiles' gives the home directory
+a more consistent look since most of the stock folders start with uppercase
+letters):</p>
+
+<div class="highlight highlight-source-shell"><pre>$ git clone https://github.com/chiayolin/dotfiles.git <span class="pl-smi">$HOME</span>/Dotfiles/</pre></div>
+
+<p>Initialise the repository with its submodules (e.g. plugins for
+shell and vim), and get everythng up to date by running 
+<code>strap.sh update</code>:</p>
+
+<div class="highlight highlight-source-shell"><pre>$ sh strap.sh update <span class="pl-c"># pulling updates from upstream</span></pre></div>
+
+<p>To install the dotfiles, run <code>sh strap.sh install</code>:</p>
+
+<div class="highlight highlight-source-shell"><pre>$ sh strap.sh install</pre></div>
+
+<p>Alternatively, update and install the dotfiles in one step:</p>
+
+<div class="highlight highlight-source-shell"><pre>$ sh strap.sh update <span class="pl-k">&amp;&amp;</span> sh strap.sh install</pre></div>
+
+<p>Execute <code>strap.sh</code> with no argument for help and usage:</p>
+
+<div class="highlight highlight-source-shell"><pre>$ sh strap.sh</pre></div>
+
+<h2>
+<a id="rundown" class="anchor" href="#rundown" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Rundown</h2>
+
+<p>This repository is structured as the directory tree shown below:</p>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-c1">.</span>
+├── formulae        <span class="pl-c"># the dotfiles are stored here</span>
+│   ├── _include    <span class="pl-c"># shared configuation files</span>
+│   │   └── _bin    <span class="pl-c"># script(s) that the dotfiles will run</span>
+│   └── ...         <span class="pl-c"># the configuation files/directories</span>
+└── packages        <span class="pl-c"># rules for installing packages</span>
+    └── ...         <span class="pl-c"># dirs containing rules for each package</span></pre></div>
+
+<h3>
+<a id="formulae" class="anchor" href="#formulae" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><code>formulae/</code>
+</h3>
+
+<p>The directory <code>formulae/</code> contains the dotfiles. Therefore, every file inside 
+this directory will be symlinked to <code>$HOME</code> after the process of installation 
+is completed (after running <code>sh strap.sh install</code>). The symlinks inside 
+<code>$HOME</code> are <em>dotfiles</em> with their original file extensions removed:</p>
+
+<div class="highlight highlight-source-shell"><pre>formulae/zshrc.sh -<span class="pl-k">&gt;</span> <span class="pl-smi">$HOME</span>/.zshrc</pre></div>
+
+<p>The shared configuation files are stored under <code>_formulae/_include</code>. Take a 
+look at this directory to get an idea of what kind of files would belong to
+here. Futhermore, scripts or binary used by the dotfiles are placed under
+<code>_formulae/_include/_bin</code>. </p>
+
+<h3>
+<a id="packages" class="anchor" href="#packages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><code>packages/</code>
+</h3>
+
+<p>This diectory is consisted of subdirectories containing installation scripts
+for each supported operating system. The defined packages under <code>packages/</code>
+can be installed by running <code>strap.sh install-pkg</code>. However, this feature is 
+still under development, so only macOS is currently supported.</p>
+
+<p>Each subdirectory of <code>packages/</code> is named using the name of a specific package and 
+contains a couple of files, that among them are, a file with <code>.info</code> as its file
+extension and files that contains rules for installing this package on differnet 
+operating system. The tree shown below is an exmaple of a subdirectory containing
+rules for installing <code>archey</code>:</p>
+
+<div class="highlight highlight-source-shell"><pre>archey
+├── archey.darwin
+├── archey.ubuntu
+├── ...
+└── archey.info</pre></div>
+
+<p>When <code>strap.sh install-pkg</code> is executed, <code>strap.sh</code> will look into every
+subdirectory inside <code>packages/</code> for a file ends with <code>.info</code> and run it.
+<code>strap.sh</code> will proceed to determine the current operating system running on 
+the machine. And based upon the result, for instance, <code>strap.sh</code> will look for 
+<code>archey.darwin</code> if the machine is running macOS or <code>archey.ubuntu</code> if the
+operating system is Ubuntu and etc. Every file under each subdirectory is just
+a regular shell script that automates the process of installing a package.</p>
+
+<h2>
+<a id="author" class="anchor" href="#author" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Author</h2>
+
+<p><a href="mailto:chiayo.lin@gmail.com"><img src="https://img.shields.io/badge/author-Chiayo%20Lin-green.svg" alt="Chiayo Lin"></a></p>
+
+<p>Any patches or pull-requests are more than welcome :)</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p><a href="https://raw.githubusercontent.com/chiayolin/dotfiles/master/LICENSE.txt"><img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="GitHub license"></a></p>
+
+<blockquote>
+<p>"The code is dedicated, in respect and admiration, to the spirit that lives in
+   the computer" ~ Alan J. Perlis. <em>Structure and Interpretation of 
+  Computer Programs</em>, pp. foreword.</p>
+</blockquote>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/chiayolin">chiayolin</a> can be found on <a href="https://github.com/chiayolin/dotfiles">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
