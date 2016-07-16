@@ -44,6 +44,26 @@ Execute `strap.sh` with no argument for help and usage:
 ```sh
 $ sh strap.sh
 ```
+## Directory Rundown
+
+```sh
+.
+├── formulae        # the dotfiles are stored here
+│   ├── _include    # shared shell configuation files
+│   │   └── _bin    # script(s) that the dotfiles will run
+│   ├── kwm         # config files for kwm window manager
+│   ├── vim         # config files for vim text editor 
+│   └── zsh         # config files for zsh shell
+└── packages        # rules for installing each package
+    ├── archey      # script(s) for installing arhcey 
+    ├── hfile       # script(s) for installing hfile
+    ├── htop        # script(s) for installing htop
+    ├── iterm2      # script(s) for installing iterm2
+    │   └── config  # contains iterm2's config
+    ├── nbc         # script(s) for installing nbc
+    ├── tmux        # script(s) for installing tmux
+    └── vim         # script(s) for installing vim
+```
 
 ## Author
 
@@ -55,6 +75,4 @@ Any patches and pull-requests are more than welcome :)
 [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://raw.githubusercontent.com/chiayolin/dotfiles/master/LICENSE.txt)
 > "The code is dedicated, in respect and admiration, to the spirit that lives in
    the computer" ~ Alan J. Perlis. _Structure and Interpretation of 
-  Computer Programs_, foreword.
-
-
+  Computer Programs_, pp. foreword.
