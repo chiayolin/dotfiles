@@ -47,7 +47,7 @@ $ sh strap.sh
 
 ## Rundown
 
-This repository is structured as the tree shown below:
+This repository is structured as the directory tree shown below:
 
 ```sh
 .
@@ -79,7 +79,30 @@ here. Futhermore, scripts or binary used by the dotfiles are placed under
 This diectory is consisted of subdirectories containing installation scripts
 for each supported operating system. The defined packages under `packages/`
 can be installed by running `strap.sh install-pkg`. However, this feature is 
-still under development, so only macOS is currently supported. 
+still under development, so only macOS is currently supported.
+
+Each subdirectory of `packages/` is named using the name of a specific package and 
+contains a couple of files, that among them are, a file with `.info` as its file
+extension and files that contains rules for installing this package on differnet 
+operating system. The tree shown below is an exmaple of a subdirectory containing
+rules for installing `archey`:
+
+```sh
+archey
+├── archey.darwin
+├── archey.ubuntu
+├── ...
+└── archey.info
+```
+
+When `strap.sh install-pkg` is executed, `strap.sh` will look into every
+subdirectory inside `packages/` for a file ends with `.info` and run it.
+`strap.sh` will proceed to determine the current operating system running on 
+the machine. And based upon the result, for instance, `strap.sh` will look for 
+`archey.darwin` if the machine is running macOS or `archey.ubuntu` if the
+operating system is Ubuntu and etc. Every file under each subdirectory is just
+a regular shell script. Therefore, write them as you would write any other shell 
+scripts that automate the process of installing a package.
 
 ## Author
 
