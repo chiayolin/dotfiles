@@ -54,7 +54,9 @@ Any patches and pull-requests are more than welcome :)
 ## License
 [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://raw.githubusercontent.com/chiayolin/dotfiles/master/LICENSE.txt)
 > "The code is dedicated, in respect and admiration, to the spirit that lives in
-  the computer" - Alan J. Perlis (1922-1990). _Structure and Interpretation of 
+   the computer" 
+
+> \- Alan J. Perlis (1922-1990). _Structure and Interpretation of 
   Computer Programs, foreword_.
 
 
