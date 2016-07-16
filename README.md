@@ -101,8 +101,7 @@ subdirectory inside `packages/` for a file ends with `.info` and run it.
 the machine. And based upon the result, for instance, `strap.sh` will look for 
 `archey.darwin` if the machine is running macOS or `archey.ubuntu` if the
 operating system is Ubuntu and etc. Every file under each subdirectory is just
-a regular shell script. Therefore, write them as you would write any other shell 
-scripts that automate the process of installing a package.
+a regular shell script that automates the process of installing a package.
 
 ## Author
 
