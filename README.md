@@ -39,6 +39,12 @@ Execute `strap.sh` with no argument to print the usage:
 $ sh strap.sh
 ```
 
+Alternatively, update and install the dotfiles in one step:
+
+```sh
+$ sh strap.sh update && sh strap.sh install
+```
+
 ## Author
 
 [![Chiayo Lin](https://img.shields.io/badge/author-Chiayo%20Lin-green.svg)](mailto:chiayo.lin@gmail.com)
