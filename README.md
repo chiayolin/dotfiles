@@ -44,32 +44,48 @@ Execute `strap.sh` with no argument for help and usage:
 ```sh
 $ sh strap.sh
 ```
-## Directory Rundown
+
+## Rundown
+
+This repository is structured as the tree shown below:
 
 ```sh
 .
 ├── formulae        # the dotfiles are stored here
-│   ├── _include    # shared shell configuation files
+│   ├── _include    # shared configuation files
 │   │   └── _bin    # script(s) that the dotfiles will run
-│   ├── kwm         # config files for kwm window manager
-│   ├── vim         # config files for vim text editor 
-│   └── zsh         # config files for zsh shell
-└── packages        # rules for installing each package
-    ├── archey      # script(s) for installing arhcey 
-    ├── hfile       # script(s) for installing hfile
-    ├── htop        # script(s) for installing htop
-    ├── iterm2      # script(s) for installing iterm2
-    │   └── config  # contains iterm2's config
-    ├── nbc         # script(s) for installing nbc
-    ├── tmux        # script(s) for installing tmux
-    └── vim         # script(s) for installing vim
+│   └── ...         # the configuation files/directories
+└── packages        # rules for installing packages
+    └── ...         # dirs containing rules for each package
 ```
+
+### `formulae/`
+The directory `formulae/` contains the dotfiles. Therefore, every file inside 
+this directory will be symlinked to `$HOME` after the process of installation 
+is completed (after running `sh strap.sh install`). The symlinks inside 
+`$HOME` are _dotfiles_ with their original file extensions removed:
+
+```sh
+formulae/zshrc.sh -> $HOME/.zshrc
+```
+
+The shared configuation files are stored under `_formulae/_include`. Take a 
+look at this directory to get an idea of what kind of files would belong to
+here. Futhermore, scripts or binary used by the dotfiles are placed under
+`_formulae/_include/_bin`. 
+
+### `packages/`
+
+This diectory is consisted of subdirectories containing installation scripts
+for each supported operating system. The defined packages under `packages/`
+can be installed by running `strap.sh install-pkg`. However, this feature is 
+still under development, so only macOS is currently supported. 
 
 ## Author
 
 [![Chiayo Lin](https://img.shields.io/badge/author-Chiayo%20Lin-green.svg)](mailto:chiayo.lin@gmail.com)
 
-Any patches and pull-requests are more than welcome :)
+Any patches or pull-requests are more than welcome :)
 
 ## License
 [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://raw.githubusercontent.com/chiayolin/dotfiles/master/LICENSE.txt)
