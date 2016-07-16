@@ -1,4 +1,5 @@
-# Chiayo's ~/.\* and etc.
+# Chiayo's ~/.\* and etc :w
+.
 
 ## Installing
 
