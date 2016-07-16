@@ -24,7 +24,7 @@ done
 
 # get a choice from user
 echo ""; read -p "please choose your session, $USER: " choice 
-if [[ $((choice)) != $choice ]]; then
+if [[ "$((choice))" != "$choice" ]]; then
   _exit_error "char(s)"
 elif [ -z "$choice" ] || [ "$choice" -gt "$array_length" ]; then
   _exit_error "session"
@@ -33,13 +33,13 @@ fi
 case ${array_options[$choice]} in
   "new session")
     read -p "enter new session name: " session_name
-    [ -z $session_name ] && _exit_error "session name"
+    [ -z "$session_name" ] && _exit_error "session name"
     tmux new -s "$session_name"
     ;;
   "default shell")
     ;;
   *)
-    tmux attach-session -t ${array_options[$choice]} 
+    tmux attach-session -t "${array_options[$choice]}"
     ;;
 esac
 exit 0
