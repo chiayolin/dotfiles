@@ -13,6 +13,11 @@ _exit_error () {
   exit 1
 }
 
+_exit_defualt () {
+  echo "entering defualt shell..."
+  exit 0
+}
+
 # print a list of otions
 echo "+--------------------+"
 echo "| available sessions |"
@@ -25,6 +30,7 @@ done
 # get a choice from user
 echo ""; read -p "please choose your session, $USER: " choice 
 if [[ "$((choice))" != "$choice" ]]; then
+  [ -z "$choice" ] && _exit_defualt
   _exit_error "char(s)"
 elif [ -z "$choice" ] || [ "$choice" -gt "$array_length" ]; then
   _exit_error "session"
