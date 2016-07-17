@@ -78,8 +78,8 @@ here. Futhermore, scripts or binary used by the dotfiles are placed under
 
 This diectory is consisted of subdirectories containing installation scripts
 for each supported operating system. The defined packages under `packages/`
-can be installed by running `strap.sh install-pkg`. However, this feature is 
-still under development, so only macOS is currently supported.
+can be installed by running `strap.sh install-pkg`. However, _this feature is 
+still under development_, so only macOS is currently supported.
 
 Each subdirectory of `packages/` is named using the name of a specific package and 
 contains a couple of files, that among them are, a file with `.info` as its file
