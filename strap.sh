@@ -19,8 +19,8 @@
 #     install-pkg    install packages to the mchine
 #     uninstall-pkg  uninstall packages from the machine
 #
-#    example:
-#       $ sh strap.sh install
+#   example:
+#     $ sh strap.sh install
 #
 #     run `sh strap.sh` without any additional aruguments to ptint 
 #     out the help message
