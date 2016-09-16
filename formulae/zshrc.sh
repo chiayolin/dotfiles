@@ -79,3 +79,6 @@ source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 chpwd () {
   echo $(pwd) >! $LASTPWD
 }
+
+# added by travis gem
+[ -f /Users/chiayo/.travis/travis.sh ] && source /Users/chiayo/.travis/travis.sh
