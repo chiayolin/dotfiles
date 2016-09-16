@@ -29,7 +29,7 @@ source $HOME/._include/__aliases.sh
 # if the machine is running on Linux
 if [ $LINUX ]; then
   # do something...
-  break
+  :
 
 # if the machine is running on OSX
 elif [ $DARWIN ]; then
@@ -42,7 +42,7 @@ elif [ $DARWIN ]; then
 # if the machine is running on Windows
 elif [ $WINDOWS ]; then
   # do somethinga
-  break
+  :
 fi
 
 # path to last pwd file
