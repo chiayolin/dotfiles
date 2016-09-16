@@ -44,3 +44,6 @@ classic_prompt () {
 export HISTCONTROL=ignoredups
 export PROMPT_COMMAND='history -a'
 export HISTIGNORE="&:ls:[bf]g:exit"
+
+# added by travis gem
+[ -f /Users/chiayo/.travis/travis.sh ] && source /Users/chiayo/.travis/travis.sh
