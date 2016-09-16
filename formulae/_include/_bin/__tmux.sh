@@ -19,9 +19,7 @@ _exit_defualt () {
 }
 
 # print a list of otions
-echo "+--------------------+"
-echo "| available sessions |"
-echo "+--------------------+"
+echo "List of available sessions:"
 array_length=${#array_options[@]}
 for ((i=0; i<$array_length; i++)); do 
   echo "$i) ${array_options[$i]}"
