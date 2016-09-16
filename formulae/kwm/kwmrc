@@ -1,6 +1,24 @@
 /*
 This is a sample config for Kwm
 
+The following statements can be used to set Kwms internal directory structure.
+
+    This is the root folder for Kwms files, the only thing this actually
+    specifies is the location of the 'init' script which Kwm runs upon startup.
+    Defaults to $HOME/.kwm
+
+        kwm_home /path/to/.kwm
+
+    This is the root folder in which all files included using 'include' must reside.
+    Defaults to $HOME/.kwm
+
+        kwm_include /path/to/.kwm/include
+
+    This is the folder in which all bsp-layouts managed by 'tree load' and 'tree save'
+    is loaded from / saved to. Defaults to $HOME/.kwm/layouts
+
+        kwm_layouts /path/to/.kwm/layouts
+
 Commands prefixed with 'kwmc' will call
 local functions corresponding to the
 kwmc syntax.
@@ -61,6 +79,13 @@ kwmc config center-on-float on
 /* The mouse will automatically move to the center
    of the focused window */
 kwmc config mouse-follows-focus on
+
+/* Allows a window to be moved by dragging,
+   when a modifier key and left-click is held down. */
+kwmc config mouse-drag off
+
+/* The modifier keys to be held down to initiate mouse-drag */
+kwmc config mouse-drag mod shift+ctrl
 
 // Allow window focus to wrap-around
 kwmc config cycle-focus on
