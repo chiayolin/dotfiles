@@ -10,10 +10,12 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
-" except C and Python 
+" except C, Python, and Markdown
 autocmd FileType python 
   \ setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4
 autocmd FileType c
+  \ setlocal noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
+autocmd FileType markdown
   \ setlocal noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
 
 " load plugins and runtime files
