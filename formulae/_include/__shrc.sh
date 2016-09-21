@@ -38,6 +38,9 @@ elif [ $DARWIN ]; then
   # for coreutils
   export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
   export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+  # go
+  export GOPATH=/Users/$USER/go/
+  export PATH=$GOPATH/bin:$PATH
 
 # if the machine is running on Windows
 elif [ $WINDOWS ]; then
