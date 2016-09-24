@@ -9,12 +9,12 @@ array_options=($(tmux list-sessions -F "#S" 2> /dev/null)
   "new session" "default shell")
 
 _exit_error () {
-  (2>&1 echo "invalid $1, entering defualt shell...")
+  (2>&1 echo "Invalid $1, entering defualt shell...")
   exit 1
 }
 
 _exit_defualt () {
-  echo "entering defualt shell..."
+  echo "Entering defualt shell..."
   exit 0
 }
 
@@ -26,7 +26,7 @@ for ((i=0; i<$array_length; i++)); do
 done
 
 # get a choice from user
-echo ""; read -p "please choose your session, $USER: " choice 
+echo ""; read -p "Choose your session: " choice 
 if [[ "$((choice))" != "$choice" ]]; then
   [ -z "$choice" ] && _exit_defualt
   _exit_error "char(s)"
@@ -36,7 +36,7 @@ fi
 
 case ${array_options[$choice]} in
   "new session")
-    read -p "enter new session name: " session_name
+    read -p "Enter new session name: " session_name
     [ -z "$session_name" ] && _exit_error "session name"
     tmux new -s "$session_name"
     ;;
