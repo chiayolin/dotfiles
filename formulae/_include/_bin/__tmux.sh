@@ -9,12 +9,12 @@ array_options=($(tmux list-sessions -F "#S" 2> /dev/null)
   "new session" "default shell")
 
 _exit_error () {
-  (2>&1 echo "Invalid $1, entering defualt shell...")
+  (2>&1 echo "Invalid $1, using defualt shell...")
   exit 1
 }
 
 _exit_defualt () {
-  echo "Entering defualt shell..."
+  echo "Using defualt shell..."
   exit 0
 }
 
