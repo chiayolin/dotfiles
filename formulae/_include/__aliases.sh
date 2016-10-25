@@ -39,7 +39,7 @@ elif [ $DARWIN ]; then
   
   # `buu` to update and upgrade `brew` if `brew` exists
   command -v brew >/dev/null 2>&1 && {
-    alias buu='brew update && brew upgrade --all'
+    alias buu='brew update && brew upgrade'
   }
 
 elif [ $WINDOWS ]; then
