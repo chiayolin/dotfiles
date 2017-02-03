@@ -19,3 +19,6 @@
 [submodule "formulae/zsh/zsh-syntax-highlighting"]
 	path = formulae/zsh/zsh-syntax-highlighting
   url = https://github.com/zsh-users/zsh-syntax-highlightinga
+[submodule "formulae/vim/bundle/vim-pug"]
+	path = formulae/vim/bundle/vim-pug
+	url = https://github.com/digitaltoad/vim-pug
