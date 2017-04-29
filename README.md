@@ -16,7 +16,7 @@ a more consistent look since most of the stock folders start with uppercase
 letters):
 
 ```sh
-$ git clone https://github.com/chiayolin/dotfiles.git $HOME/Dotfiles/
+$ git clone --recursive https://github.com/chiayolin/dotfiles.git $HOME/Dotfiles/
 ```
 
 Initialise the repository with its submodules (e.g. plugins for
